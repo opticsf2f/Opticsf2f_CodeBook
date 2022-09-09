@@ -3,8 +3,10 @@
 
 # ## Phasors
 # 
-# In optics it is very convenient to represent the field using a complex number and the 
-# phase of the field using a vector in the complex plane, a *phasor*.
+# In optics, it is very convenient to represent the field using a complex number, and also represent the 
+# phase of the field graphically using a vector in the complex plane, known as a *phasor*.
+# 
+# In the interactive plot we chose parameters matching Fig. 1.3.
 
 # In[1]:
 
@@ -83,9 +85,8 @@ def my_axes(ax,color,flipx,flipy):
 # In[4]:
 
 
-phi = 1 * np.pi/4
+phi = np.pi/4
 xmax = 1
-t = 10
 x = np.arange(-xmax,xmax,0.01)
 y = np.sin(2*np.pi*x-phi)
 theta = np.arange(0,2*np.pi,2*np.pi/99)
@@ -110,7 +111,6 @@ axs[1,0].scatter(xmax*np.cos(-phi),0, color = db, alpha = 1.0, zorder=2, s = 100
 axs[0,0].text(xmax,xmax,r'${\rm e}^{-{\rm i}\omega t}$',fontsize = 24, color=DUy)
 axs[0,1].text(-1.8*xmax,-1.2*xmax,r'${\rm sin}(kz-\omega t)$',fontsize = 18, color= DUy)
 axs[1,0].text(0.2*xmax,1.2*xmax,r'${\rm cos}(kz-\omega t)$',fontsize = 18, color= DUy)
-axs[1,1].text(-1.0*xmax,0.0,r'$t= %.0f ~{\rm ns}$' %t,fontsize = 24, color=DUy)
 
 plt.tight_layout()                     
 
@@ -126,7 +126,7 @@ def PhasorPlot(Time):
     phi = Time * np.pi/36
     t = 2*Time/72
 
-    fig, axs = plt.subplots(2,2,figsize=(8, 8),
+    fig, axs = plt.subplots(2,2,figsize=(6, 6),
                        facecolor=[0.0/255.0,42.0/255.0,65.0/255.0])
     for ax in axs.flat:
         base_plot(ax)
@@ -159,10 +159,4 @@ figure_example1 = InteractiveFigure(PhasorPlot,
 
 figure_example1.saveStandaloneHTML("phasor.html")
 figure_example1.show()
-
-
-# In[ ]:
-
-
-
 
