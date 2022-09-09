@@ -5,6 +5,10 @@ title: Optics f2f Code Book
 author: C. S. Adams and I. G. Hughes
 logo: Cover.png
 
+sphinx:
+  config:
+    html_extra_path: ['assets']
+
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
 execute:
