@@ -7,4 +7,6 @@ chapters:
 - file: Chapter1
   sections: 
   - file: Phasors
+chapters:
+- file: Chapter6
 
