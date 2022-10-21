@@ -4,9 +4,8 @@
 format: jb-book
 root: intro
 chapters:
-- file: Chapter1
+- file: Chapter 1
   sections: 
   - file: Phasors
-chapters:
-- file: Chapter6
+- file: Chapter 6
 
