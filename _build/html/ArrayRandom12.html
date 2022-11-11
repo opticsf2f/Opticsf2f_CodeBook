@@ -108,7 +108,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    Optics f2f Code Book
+                    <a href="https://global.oup.com/academic/product/optics-f2f-9780198786795?cc=gb&lang=en&">Optics f2f</a> Code Book
                 </a>
             </li>
         </ul>
@@ -145,17 +145,29 @@ const thebe_selector_output = ".output, .cell_output"
    4. Polarization
   </a>
  </li>
- <li class="toctree-l1">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="Chapter5.html">
    5. Many waves: Fresnel
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="FresnelSingleDoubleSlit.html">
+     5.1. Single/Double slit diffraction using the Fresnel integrals
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="Chapter6.html">
    6. Many waves: Fourier
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -593,7 +605,7 @@ the Fourier images to provide a matching test for students and instructors.</p>
 </div>
 </div>
 <p>If you want the save the solution it is printed out in this cell but remember if you run the random.choice cell again it will create a new
-arrangent.</p>
+arrangement.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Solution</span>
@@ -603,18 +615,18 @@ arrangent.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A 1
-B 5
-C 2
-D 10
-E 4
-F 6
-G 7
-H 9
-I 12
-J 3
-K 11
-L 8
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A 5
+B 1
+C 6
+D 7
+E 12
+F 2
+G 3
+H 10
+I 11
+J 4
+K 8
+L 9
 </pre></div>
 </div>
 </div>

@@ -13,6 +13,9 @@ chapters:
 - file: Chapter3
 - file: Chapter4
 - file: Chapter5
+  sections: 
+  - file: FresnelSingleDoubleSlit
+  - file: Talbot
 - file: Chapter6
   sections: 
   - file: Letters

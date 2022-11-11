@@ -216,7 +216,7 @@ fig.savefig('RandomArrays12_1.png',bbox_inches='tight')
 
 
 # If you want the save the solution it is printed out in this cell but remember if you run the random.choice cell again it will create a new
-# arrangent.
+# arrangement.
 
 # In[10]:
 
