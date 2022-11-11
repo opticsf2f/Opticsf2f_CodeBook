@@ -16,4 +16,5 @@ chapters:
 - file: Chapter6
   sections: 
   - file: Letters
+  - file: ArrayRandom12
 
