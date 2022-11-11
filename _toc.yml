@@ -9,6 +9,10 @@ chapters:
 - file: Chapter1
   sections: 
   - file: Phasors
+- file: Chapter2
+- file: Chapter3
+- file: Chapter4
+- file: Chapter5
 - file: Chapter6
   sections: 
   - file: Letters
