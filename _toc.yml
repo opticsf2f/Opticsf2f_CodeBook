@@ -16,6 +16,7 @@ chapters:
   sections: 
   - file: FresnelSingleDoubleSlit
   - file: Talbot
+    title: Talbot carpet
 - file: Chapter6
   sections: 
   - file: Letters

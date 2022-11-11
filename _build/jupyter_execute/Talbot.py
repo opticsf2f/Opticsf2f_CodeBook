@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Talbot carpet
+# ### Talbot carpet
 # 
 # This code makes a plot of a **Talbot carpet**, named after 
 # <a href = "https://en.wikipedia.org/wiki/Henry_Fox_Talbot">Henry Fox Talbot</a> (Feb 11, 1800 - Sept 17, 1877),

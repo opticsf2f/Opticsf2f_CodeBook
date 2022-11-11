@@ -3,6 +3,12 @@
 Chapter 6 is about many waves again but this time we use **Fourier transforms** to
 perform the sum.
 
+Files:
+
+
+Letter.ipynb
+ArrayRandom12.ipynb
+
 
 We shall consider the propagation of light---using the Hedgehog equation (or angular spectrum method) and calculate **Fresnel** and **Fraunhofer diffraction** patterns in a particular plane. 
 
