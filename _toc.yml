@@ -3,9 +3,13 @@
 
 format: jb-book
 root: intro
+options:  # The options key will be applied to all chapters, but not sub-sections
+  numbered: True
 chapters:
 - file: Chapter1
   sections: 
   - file: Phasors
 - file: Chapter6
+  sections: 
+  - file: Letters
 
