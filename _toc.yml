@@ -11,6 +11,9 @@ chapters:
   - file: Phasors
 - file: Chapter2
 - file: Chapter3
+  sections: 
+  - file: PlaneWavesN
+  - file: CurvedWaves
 - file: Chapter4
   sections: 
   - file: Pol_SW
