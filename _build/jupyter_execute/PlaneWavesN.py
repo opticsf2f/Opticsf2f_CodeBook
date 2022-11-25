@@ -146,14 +146,14 @@ axs[0].set_axis_off()
 arrow = mpatches.FancyArrow(0, y_pts/2,  z_pts, -z_pts*np.tan(Theta), width=2, head_width = 8, 
                             head_length = 30, length_includes_head=True, color = 'white')
 axs[0].add_patch(arrow)
-plotting_function(0,"(i)","$x$","$y$",z_pts,y_pts)   
+plotting_function(0,"(i)","$z$","$x$",z_pts,y_pts)   
 
 axs[1].imshow(RGB_data1(Theta,2))
 arrow = mpatches.FancyArrow(0, y_pts/2,  z_pts, z_pts*np.tan(Theta), width=2, head_width = 8, 
                                 head_length = 30, length_includes_head=True, color = 'white')
 axs[1].add_patch(arrow)
 axs[1].set_axis_off()
-plotting_function(1,"(ii)","$x$","$y$",z_pts,y_pts)   
+plotting_function(1,"(ii)","$z$","$x$",z_pts,y_pts)   
 
 axs[2].imshow(RGB_data1(Theta,0))
 axs[2].set_axis_off()
@@ -161,7 +161,7 @@ for Angle in Thetas:
     arrow = mpatches.FancyArrow(0, y_pts/2,  z_pts, z_pts*np.tan(Angle), width=2, head_width = 8, 
                                 head_length = 30, length_includes_head=True, color = 'white')
     axs[2].add_patch(arrow)
-plotting_function(2,"(iii)","$x$","$y$",z_pts,y_pts)   
+plotting_function(2,"(iii)","$z$","$x$",z_pts,y_pts)   
 
 plt.subplots_adjust(left=0.0,bottom=0.0,right=1.0,top=1.0,wspace=0.1,hspace=0.1)
 
