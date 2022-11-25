@@ -12,6 +12,9 @@ chapters:
 - file: Chapter2
 - file: Chapter3
 - file: Chapter4
+  sections: 
+  - file: Pol_SW
+  - file: Pol_Poincare
 - file: Chapter5
   sections: 
   - file: FresnelSingleDoubleSlit
