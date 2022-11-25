@@ -1,0 +1,652 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>4.1. Polization standing waves &#8212; Optics f2f Code Book</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="4.2. Polarization in the circular basis: Poincare sphere" href="Pol_Poincare.html" />
+    <link rel="prev" title="4. Polarization" href="Chapter4.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/Cover.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Optics f2f Code Book</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    <a href="https://global.oup.com/academic/product/optics-f2f-9780198786795?cc=gb&lang=en&">Optics f2f</a> Code Book
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Chapter1.html">
+   1. Introduction
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Phasors.html">
+     1.1. Phasors
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Chapter2.html">
+   2. One wave
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Chapter3.html">
+   3. Two waves
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="Chapter4.html">
+   4. Polarization
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     4.1. Polization standing waves
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Pol_Poincare.html">
+     4.2. Polarization in the circular basis: Poincare sphere
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Chapter5.html">
+   5. Many waves: Fresnel
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="FresnelSingleDoubleSlit.html">
+     5.1. Single/Double slit diffraction using the Fresnel integrals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Talbot.html">
+     5.2. Talbot carpet
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Chapter6.html">
+   6. Many waves: Fourier
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Letters.html">
+     6.1. 2D FT of letters
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ArrayRandom12.html">
+     6.2. 2D FT of arrays: Exercise
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/Pol_SW.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FPol_SW.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/Pol_SW.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Polization standing waves</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section id="polization-standing-waves">
+<h1><span class="section-number">4.1. </span>Polization standing waves<a class="headerlink" href="#polization-standing-waves" title="Permalink to this headline">#</a></h1>
+<p>A Jupyter Notebook containing this code</p>
+<p>Pol_SW.ipynb</p>
+<p>can be downloaded from</p>
+<p><a class="reference external" href="https://github.com/opticsf2f/Opticsf2f_CodeBook">https://github.com/opticsf2f/Opticsf2f_CodeBook</a></p>
+<p>The code make plots of polarization states arising in standing waves. We consider counter-propagating beams propagating
+along the <span class="math notranslate nohighlight">\(z\)</span> axis. There are four cases of interest:</p>
+<p>(i) parallel linear (both beams linearly polarized say along the <span class="math notranslate nohighlight">\(y\)</span> axis),</p>
+<p>(ii) orthogonal linear (one beams linearly polarized along <span class="math notranslate nohighlight">\(y\)</span> and the counter propagating beam linearly polarized along <span class="math notranslate nohighlight">\(x\)</span>,</p>
+<p>(iii) identical circular,</p>
+<p>(iv) orthogonal circular.</p>
+<p>As the polarization state varies with position we plot the electric field at all times up to one period at different position.</p>
+<p>We use colour intensity to represent time. Early times fade to white. Recent times are a single colour
+(red, green or blue, for right circular, linear, and left circular respectively).</p>
+<p>The physics part of the code is simple. We just add fields of the form</p>
+<div class="math notranslate nohighlight">
+\[{\cal E}_{x,y} = {\cal E}_0 \cos [ 2\pi (\pm z-c t)/\lambda +\phi ]~,\]</div>
+<p>with an appropriate choice of propagation direction, <span class="math notranslate nohighlight">\(\pm z\)</span>, components <span class="math notranslate nohighlight">\({\cal E}_{x,y}\)</span> and relative phase <span class="math notranslate nohighlight">\(\phi\)</span>.</p>
+<p>We set <span class="math notranslate nohighlight">\(\lambda = 1\)</span> so space dimensions are measuremed in units of the wavelength.</p>
+<p>Also <span class="math notranslate nohighlight">\(c=1\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">mpl_toolkits.mplot3d</span> <span class="kn">import</span> <span class="n">proj3d</span>
+<span class="kn">from</span> <span class="nn">matplotlib.patches</span> <span class="kn">import</span> <span class="n">FancyArrowPatch</span>
+<span class="kn">import</span> <span class="nn">matplotlib.gridspec</span> <span class="k">as</span> <span class="nn">gridspec</span>
+
+<span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">mpl</span>
+<span class="n">mpl</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;font.family&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;serif&#39;</span>
+<span class="n">mpl</span><span class="o">.</span><span class="n">rc</span><span class="p">(</span><span class="s1">&#39;text&#39;</span><span class="p">,</span> <span class="n">usetex</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The next cell define a function for the electric field, and some things we need to make 3D axes.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">E</span><span class="p">(</span><span class="n">z</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="n">phi</span><span class="p">):</span>    
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="p">(</span><span class="n">z</span> <span class="o">-</span> <span class="n">t</span><span class="p">)</span> <span class="o">+</span> <span class="n">phi</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">Arrow3D</span><span class="p">(</span><span class="n">FancyArrowPatch</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">xs</span><span class="p">,</span> <span class="n">ys</span><span class="p">,</span> <span class="n">zs</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_verts3d</span> <span class="o">=</span> <span class="n">xs</span><span class="p">,</span> <span class="n">ys</span><span class="p">,</span> <span class="n">zs</span>
+
+    <span class="k">def</span> <span class="nf">do_3d_projection</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">renderer</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="n">xs3d</span><span class="p">,</span> <span class="n">ys3d</span><span class="p">,</span> <span class="n">zs3d</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_verts3d</span>
+        <span class="n">xs</span><span class="p">,</span> <span class="n">ys</span><span class="p">,</span> <span class="n">zs</span> <span class="o">=</span> <span class="n">proj3d</span><span class="o">.</span><span class="n">proj_transform</span><span class="p">(</span><span class="n">xs3d</span><span class="p">,</span> <span class="n">ys3d</span><span class="p">,</span> <span class="n">zs3d</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">axes</span><span class="o">.</span><span class="n">M</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_positions</span><span class="p">((</span><span class="n">xs</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">ys</span><span class="p">[</span><span class="mi">0</span><span class="p">]),(</span><span class="n">xs</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">ys</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">zs</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">DrawAxes</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">ax</span> <span class="ow">or</span> <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">Arrow3D</span><span class="p">(</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.02</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">],</span> <span class="n">mutation_scale</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">mutation_aspect</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span>
+                    <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">arrowstyle</span><span class="o">=</span><span class="s2">&quot;-|&gt;&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">add_artist</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">Arrow3D</span><span class="p">(</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">4.5</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">mutation_scale</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">mutation_aspect</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+                    <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">arrowstyle</span><span class="o">=</span><span class="s2">&quot;-|&gt;&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">add_artist</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">Arrow3D</span><span class="p">(</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">mutation_scale</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">mutation_aspect</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+                    <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">arrowstyle</span><span class="o">=</span><span class="s2">&quot;-|&gt;&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">add_artist</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+    <span class="n">y_off</span> <span class="o">=</span> <span class="o">-</span><span class="mf">2.8</span>
+    
+    <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">4.5</span><span class="p">,</span> <span class="mf">0.15</span><span class="p">,</span> <span class="s1">&#39;$x$&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span><span class="mi">24</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span>  <span class="s1">&#39;$y$&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span><span class="mi">24</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">1.2</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;$z$&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span><span class="mi">24</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="o">-</span><span class="mf">0.025</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">y_off</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;$0$&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span><span class="mi">24</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.2</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">y_off</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;$\textstyle{1\over 4}\lambda$&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span><span class="mi">24</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.45</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">y_off</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;$\textstyle{1\over 2}\lambda$&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span><span class="mi">24</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.7</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">y_off</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;$\textstyle{3\over 4}\lambda$&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span><span class="mi">24</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.98</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">y_off</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;$\lambda$&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span><span class="mi">24</span><span class="p">)</span>
+
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="o">-</span><span class="mf">0.2</span><span class="p">,</span><span class="mf">1.2</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_zlim</span><span class="p">(</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">view_init</span><span class="p">(</span><span class="n">elev</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">azim</span><span class="o">=-</span><span class="mi">75</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_box_aspect</span><span class="p">(</span><span class="n">aspect</span> <span class="o">=</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_axis_off</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">ax</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we plot the four cases described above. Note how we use</p>
+<p>c = t</p>
+<p>for the colour of the points in scatter3D. This maps time onto the colormap.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span> <span class="c1"># portrait</span>
+<span class="n">ax1</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="s1">&#39;3d&#39;</span><span class="p">)</span>
+<span class="n">ax2</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="s1">&#39;3d&#39;</span><span class="p">)</span>
+<span class="n">ax3</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="s1">&#39;3d&#39;</span><span class="p">)</span>
+<span class="n">ax4</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="s1">&#39;3d&#39;</span><span class="p">)</span>
+
+<span class="n">n_pts</span> <span class="o">=</span> <span class="mi">400</span>
+<span class="n">pos</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">,</span><span class="mi">9</span><span class="p">)</span>
+
+<span class="n">DrawAxes</span><span class="p">(</span><span class="n">ax1</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">jj</span> <span class="ow">in</span> <span class="n">pos</span><span class="p">:</span>   
+    <span class="n">z</span> <span class="o">=</span> <span class="n">jj</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">n_pts</span><span class="p">)</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">,</span><span class="n">n_pts</span><span class="p">)</span>
+    <span class="n">Ex</span> <span class="o">=</span> <span class="mf">0.0</span><span class="o">*</span><span class="p">(</span><span class="n">E</span><span class="p">(</span><span class="n">z</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="n">E</span><span class="p">(</span><span class="o">-</span><span class="n">z</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+    <span class="n">Ey</span> <span class="o">=</span> <span class="mf">1.0</span><span class="o">*</span><span class="p">(</span><span class="n">E</span><span class="p">(</span><span class="n">z</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="n">E</span><span class="p">(</span><span class="o">-</span><span class="n">z</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+    <span class="n">ax1</span><span class="o">.</span><span class="n">scatter3D</span><span class="p">(</span><span class="n">z</span><span class="p">,</span><span class="n">Ex</span><span class="p">,</span><span class="n">Ey</span><span class="p">,</span><span class="n">c</span> <span class="o">=</span> <span class="n">t</span><span class="p">,</span> <span class="n">cmap</span> <span class="o">=</span> <span class="s1">&#39;Greens&#39;</span><span class="p">,</span> <span class="n">s</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.05</span><span class="p">)</span>
+    <span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">jj</span><span class="p">,</span><span class="n">jj</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.1</span><span class="p">],</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>  <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="o">-</span><span class="mf">0.3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">3.6</span><span class="p">,</span>  <span class="s1">&#39;$(i)$&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span><span class="mi">24</span><span class="p">)</span>
+
+<span class="n">DrawAxes</span><span class="p">(</span><span class="n">ax4</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">jj</span> <span class="ow">in</span> <span class="n">pos</span><span class="p">:</span>   
+    <span class="n">z</span> <span class="o">=</span> <span class="n">jj</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">n_pts</span><span class="p">)</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">,</span><span class="n">n_pts</span><span class="p">)</span>
+    <span class="n">Ex</span> <span class="o">=</span> <span class="mf">1.0</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">jj</span><span class="o">*</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span><span class="o">*</span><span class="n">E</span><span class="p">(</span><span class="n">z</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">Ey</span> <span class="o">=</span> <span class="mf">1.0</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">jj</span><span class="o">*</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span><span class="o">*</span><span class="n">E</span><span class="p">(</span><span class="n">z</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+    <span class="n">ax4</span><span class="o">.</span><span class="n">scatter3D</span><span class="p">(</span><span class="n">z</span><span class="p">,</span><span class="n">Ex</span><span class="p">,</span><span class="n">Ey</span><span class="p">,</span><span class="n">c</span> <span class="o">=</span> <span class="n">t</span><span class="p">,</span> <span class="n">cmap</span> <span class="o">=</span> <span class="s1">&#39;Greens&#39;</span><span class="p">,</span> <span class="n">s</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.05</span><span class="p">)</span>
+    <span class="n">ax4</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">jj</span><span class="p">,</span><span class="n">jj</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.1</span><span class="p">],</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>  <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
+<span class="n">ax4</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="o">-</span><span class="mf">0.3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">3.6</span><span class="p">,</span>  <span class="s1">&#39;$(iv)$&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span><span class="mi">24</span><span class="p">)</span>
+
+<span class="n">DrawAxes</span><span class="p">(</span><span class="n">ax3</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">jj</span> <span class="ow">in</span> <span class="n">pos</span><span class="p">:</span>   
+    <span class="n">z</span> <span class="o">=</span> <span class="n">jj</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">n_pts</span><span class="p">)</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">,</span><span class="n">n_pts</span><span class="p">)</span>
+    <span class="n">Ex</span> <span class="o">=</span> <span class="n">E</span><span class="p">(</span><span class="n">z</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">Ey</span> <span class="o">=</span> <span class="n">E</span><span class="p">(</span><span class="n">z</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="n">jj</span><span class="o">*</span><span class="mi">4</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">jj</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">jj</span> <span class="o">==</span> <span class="mf">0.25</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">jj</span> <span class="o">==</span> <span class="mf">0.5</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">jj</span> <span class="o">==</span> <span class="mf">0.75</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">jj</span> <span class="o">==</span> <span class="mf">1.0</span><span class="p">):</span>
+        <span class="n">ax3</span><span class="o">.</span><span class="n">scatter3D</span><span class="p">(</span><span class="n">z</span><span class="p">,</span><span class="n">Ex</span><span class="p">,</span><span class="n">Ey</span><span class="p">,</span><span class="n">c</span> <span class="o">=</span> <span class="n">t</span><span class="p">,</span> <span class="n">cmap</span> <span class="o">=</span> <span class="s1">&#39;Greens&#39;</span><span class="p">,</span> <span class="n">s</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.05</span><span class="p">)</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">jj</span> <span class="o">==</span> <span class="mf">0.125</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">jj</span> <span class="o">==</span> <span class="mf">0.625</span><span class="p">)</span> <span class="p">:</span>
+        <span class="n">ax3</span><span class="o">.</span><span class="n">scatter3D</span><span class="p">(</span><span class="n">z</span><span class="p">,</span><span class="n">Ex</span><span class="p">,</span><span class="n">Ey</span><span class="p">,</span><span class="n">c</span> <span class="o">=</span> <span class="n">t</span><span class="p">,</span> <span class="n">cmap</span> <span class="o">=</span> <span class="s1">&#39;Blues&#39;</span><span class="p">,</span> <span class="n">s</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.6</span><span class="p">)</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">jj</span> <span class="o">==</span> <span class="mf">0.375</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">jj</span> <span class="o">==</span> <span class="mf">0.875</span><span class="p">):</span>
+        <span class="n">ax3</span><span class="o">.</span><span class="n">scatter3D</span><span class="p">(</span><span class="n">z</span><span class="p">,</span><span class="n">Ex</span><span class="p">,</span><span class="n">Ey</span><span class="p">,</span><span class="n">c</span> <span class="o">=</span> <span class="n">t</span><span class="p">,</span> <span class="n">cmap</span> <span class="o">=</span> <span class="s1">&#39;Reds&#39;</span><span class="p">,</span> <span class="n">s</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.6</span><span class="p">)</span>
+<span class="c1">#    ax3.scatter3D(z,Ex,Ey,c = t, cmap = &#39;Blues&#39;, s = 10, alpha = 0.6)</span>
+    <span class="n">ax3</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">jj</span><span class="p">,</span><span class="n">jj</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.1</span><span class="p">],</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>  <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
+<span class="n">ax3</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="o">-</span><span class="mf">0.3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">3.6</span><span class="p">,</span>  <span class="s1">&#39;$(ii)$&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span><span class="mi">24</span><span class="p">)</span>
+
+<span class="n">DrawAxes</span><span class="p">(</span><span class="n">ax2</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">jj</span> <span class="ow">in</span> <span class="n">pos</span><span class="p">:</span>
+    <span class="n">z</span> <span class="o">=</span> <span class="n">jj</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">n_pts</span><span class="p">)</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">,</span><span class="n">n_pts</span><span class="p">)</span>
+    <span class="n">Ex</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">2.0</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">jj</span><span class="o">*</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span><span class="o">*</span><span class="n">E</span><span class="p">(</span><span class="n">z</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">Ey</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">2.0</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">jj</span><span class="o">*</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span><span class="o">*</span><span class="n">E</span><span class="p">(</span><span class="n">z</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">ax2</span><span class="o">.</span><span class="n">scatter3D</span><span class="p">(</span><span class="n">z</span><span class="p">,</span><span class="n">Ex</span><span class="p">,</span><span class="n">Ey</span><span class="p">,</span><span class="n">c</span> <span class="o">=</span> <span class="n">t</span><span class="p">,</span> <span class="n">cmap</span> <span class="o">=</span> <span class="s1">&#39;Reds&#39;</span><span class="p">,</span> <span class="n">s</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.6</span><span class="p">)</span>
+    <span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">jj</span><span class="p">,</span><span class="n">jj</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.1</span><span class="p">],</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>  <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="o">-</span><span class="mf">0.3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">3.6</span><span class="p">,</span>  <span class="s1">&#39;$(iii)$&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span><span class="mi">24</span><span class="p">)</span>
+
+
+<span class="n">fig</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span><span class="n">hspace</span><span class="o">=-</span><span class="mf">0.1</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span><span class="n">wspace</span><span class="o">=-</span><span class="mf">0.5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/Pol_SW_5_0.png" src="_images/Pol_SW_5_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;Pol_SW_space_time.png&#39;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="Chapter4.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">4. </span>Polarization</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="Pol_Poincare.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">4.2. </span>Polarization in the circular basis: Poincare sphere</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By C. S. Adams and I. G. Hughes<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
