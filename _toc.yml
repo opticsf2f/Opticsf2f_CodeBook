@@ -14,6 +14,7 @@ chapters:
   sections: 
   - file: PlaneWavesN
   - file: CurvedWaves
+  - file: Grating
 - file: Chapter4
   sections: 
   - file: Pol_SW
