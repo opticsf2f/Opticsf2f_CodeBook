@@ -158,7 +158,7 @@ def PrismFig(Index,Rays,E_or_I):
             if (E_or_I == "Intensity"):
                 G[jj,:] +=  0.2*(abs(c)*abs(c))**0.5
 
-    fig, (ax1) = plt.subplots(1,1,figsize=(8, 8),dpi=60)
+    fig, (ax1) = plt.subplots(1,1,figsize=(6, 6),dpi=60)
 
     if (Rays == "Rays"):
         for RayDisp in range (-3,4,1):
@@ -230,7 +230,7 @@ def PrismFig(Index,Rays,E_or_I):
 start_time = time.time()
 
 figure_example1 = InteractiveFigure(PrismFig,
-                                    Index = RangeWidget(1.0, 1.6, 0.1),
+                                    Index = RangeWidget(1.0, 1.6, 0.2),
                                     Rays = RadioWidget(['No Rays', 'Rays']),
                                     E_or_I = RadioWidget(['Intensity', 'Field']),
 )
@@ -238,4 +238,10 @@ figure_example1.saveStandaloneHTML("PrismInteractive.html")
 
 print("--- %s seconds ---" % (time.time() - start_time))
 figure_example1.show()
+
+
+# In[ ]:
+
+
+
 
