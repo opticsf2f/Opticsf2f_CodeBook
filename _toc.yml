@@ -12,6 +12,7 @@ chapters:
 - file: Chapter2
   sections: 
   - file: LensRefraction
+  - file: PrismRefraction
 - file: Chapter3
   sections: 
   - file: PlaneWavesN

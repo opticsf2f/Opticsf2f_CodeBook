@@ -9,6 +9,10 @@ https://github.com/opticsf2f/Opticsf2f_CodeBook
 
 Or you can copy each code blocks by clicking on the icon in top right.
 
+If there is an **interactive figure** it will be at the bottom of the page. All the interactive figures can be downloaded from
+
+https://github.com/opticsf2f/Opticsf2f_CodeBook/tree/main/assets
+
 Contents:
 
 

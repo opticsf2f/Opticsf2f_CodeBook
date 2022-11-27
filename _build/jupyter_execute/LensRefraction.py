@@ -7,14 +7,16 @@
 # see Sec. 2.15-2.18 of <a href="https://global.oup.com/academic/product/optics-f2f-9780198786795?cc=gb&lang=en&">Opticsf2f</a>.
 # We shall add rays which follow the **law of Ibn Sahl**, Sec. 2.7. This allows us to compare ray optics and
 # wave optics, at least for the case of a small lens.
-# For a simpler case of refraction, see also Prism.
+# For a simpler case of refraction, see also 
+# <a href="https://opticsf2f.github.io/Opticsf2f_CodeBook/PrismRefraction.html">
+# an example using a prism, PrismRefraction.ipynb</a>
 # 
 # The simulation makes use of some topics covered in later Chapters: For example, we shall propagate the electric 
 # field using the **hedgehog equation**, Sec. 6.4.
-# Also the he input field is a **gaussian beam**, see  Sec. 11.3. However, we do not necessarily need to understanding exactly how 
+# Also the input field is a **gaussian beam**, see  Sec. 11.3. However, we do not necessarily need to understanding exactly how 
 # the simulation is construction in order to understanding the basis properties of lens. 
 # 
-# If you just want to play with the interactive figure scroll to the bottom.
+# If you just want to play with the **interactive figure** scroll to the bottom.
 # 
 # The Jupyter Notebook is LensRefraction.ipynb see
 # 
