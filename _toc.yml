@@ -10,6 +10,8 @@ chapters:
   sections: 
   - file: Phasors
 - file: Chapter2
+  sections: 
+  - file: LensRefraction
 - file: Chapter3
   sections: 
   - file: PlaneWavesN
