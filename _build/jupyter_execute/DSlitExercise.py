@@ -203,7 +203,7 @@ plt.subplots_adjust(left=0.0,bottom=0.0,right=1.0,top=1.0,wspace=0.05,hspace=0.0
 fig.savefig('DSlitExercise.png',bbox_inches='tight')
 
 
-# If you want the save the solution it is printed out in this cell but remember if you run the random.choice cell again it will create a new
+# If you want to save the solution it is printed out in this cell but remember if you run the random.choice cell again it will create a new
 # arrangement.
 
 # In[10]:
