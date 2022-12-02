@@ -16,6 +16,7 @@ chapters:
   - file: Disp
 - file: Chapter3
   sections: 
+  - file: StandingWave
   - file: PlaneWavesN
   - file: CurvedWaves
   - file: Grating
