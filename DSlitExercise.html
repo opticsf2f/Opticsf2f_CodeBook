@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>6.3. 2D FT of arrays: Exercise &#8212; Optics f2f Code Book</title>
+    <title>6.2. 2D FT of two slits: Exercise &#8212; Optics f2f Code Book</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,7 +52,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="6.2. 2D FT of two slits: Exercise" href="DSlitExercise.html" />
+    <link rel="next" title="6.3. 2D FT of arrays: Exercise" href="ArrayRandom12.html" />
+    <link rel="prev" title="6.1. 2D FT of letters" href="Letters.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -247,13 +248,13 @@ const thebe_selector_output = ".output, .cell_output"
      6.1. 2D FT of letters
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="DSlitExercise.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      6.2. 2D FT of two slits: Exercise
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+   <li class="toctree-l2">
+    <a class="reference internal" href="ArrayRandom12.html">
      6.3. 2D FT of arrays: Exercise
     </a>
    </li>
@@ -318,7 +319,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/ArrayRandom12.ipynb"
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/DSlitExercise.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -378,7 +379,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FArrayRandom12.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FDSlitExercise.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -406,7 +407,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="_sources/ArrayRandom12.ipynb"
+        <a href="_sources/DSlitExercise.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -455,7 +456,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>2D FT of arrays: Exercise</h1>
+                <h1>2D FT of two slits: Exercise</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -467,13 +468,13 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="d-ft-of-arrays-exercise">
-<h1><span class="section-number">6.3. </span>2D FT of arrays: Exercise<a class="headerlink" href="#d-ft-of-arrays-exercise" title="Permalink to this headline">#</a></h1>
+  <section id="d-ft-of-two-slits-exercise">
+<h1><span class="section-number">6.2. </span>2D FT of two slits: Exercise<a class="headerlink" href="#d-ft-of-two-slits-exercise" title="Permalink to this headline">#</a></h1>
 <p>Two dimensional aperture arrays provide an excellent test of many optics concepts including <strong>interference</strong> and <strong>diffraction</strong>.</p>
 <p>Alternatively, as the <strong>Fraunhofer diffraction</strong> pattern is proportional to a <strong>Fourier transform</strong> of the aperture function,
 we can view this as an exercise in understanding the properties of Fourier transforms, including scaling, symmetry, translation, etc.</p>
 <p>This notebook constructs an aperture array, and calculates the corresponding 2D Fourier transform (or Fraunhoger diffraction pattern).
-We repeat for 12 different input arrays (chosen from 120 possible permutations) and plot
+We repeat for 12 different input arrays and plot
 the correspond Fourier images in a random order below. Every time you run the code, it will choose a different combination!</p>
 <p>The task for the student is to match the input array letter (A to L) to their Fourier image (numbered 1 to 12).</p>
 <div class="cell docutils container">
@@ -493,63 +494,45 @@ the correspond Fourier images in a random order below. Every time you run the co
 </div>
 </div>
 </div>
-<p>This cell defines our selection of aperture shapes. We have chosen a rectangle with aspect ratio 1:2, a square, a diamond (aspect ratio 1:1), a triangle, and a circle.
-These are then selected at random using a string label. The only free parameter in the shape is their size, given by a.</p>
+<p>This cell defines our selection of aperture shapes. Here we use a slit with aspect ratio 1:20. The free parameter is the slit width a and rotation angle.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">Shapes</span><span class="p">(</span><span class="n">slabel</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">x0</span><span class="p">,</span><span class="n">y0</span><span class="p">,</span><span class="n">a</span><span class="p">):</span>    
-    <span class="k">if</span> <span class="n">slabel</span> <span class="o">==</span> <span class="s1">&#39;r&#39;</span><span class="p">:</span>
-        <span class="n">b</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">a</span>
-        <span class="n">shape</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">x0</span> <span class="o">&gt;</span> <span class="p">(</span><span class="o">-</span><span class="n">a</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">x0</span> <span class="o">&lt;</span> <span class="p">(</span><span class="n">a</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="n">y0</span> <span class="o">&gt;</span> <span class="p">(</span><span class="o">-</span><span class="n">b</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="n">y0</span> <span class="o">&lt;</span> <span class="p">(</span><span class="n">b</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
-    <span class="k">elif</span> <span class="n">slabel</span> <span class="o">==</span> <span class="s1">&#39;s&#39;</span><span class="p">:</span>
-        <span class="n">b</span> <span class="o">=</span> <span class="n">a</span>
-        <span class="n">shape</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">x0</span> <span class="o">&gt;</span> <span class="p">(</span><span class="o">-</span><span class="n">a</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">x0</span> <span class="o">&lt;</span> <span class="p">(</span><span class="n">a</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="n">y0</span> <span class="o">&gt;</span> <span class="p">(</span><span class="o">-</span><span class="n">b</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="n">y0</span> <span class="o">&lt;</span> <span class="p">(</span><span class="n">b</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
-    <span class="k">elif</span> <span class="n">slabel</span> <span class="o">==</span> <span class="s1">&#39;d&#39;</span><span class="p">:</span>
-        <span class="n">rotation</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span>
-        <span class="n">b</span> <span class="o">=</span> <span class="n">a</span>
-        <span class="n">xa</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">x0</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">rotation</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="n">y0</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">rotation</span><span class="p">)</span>
-        <span class="n">ya</span> <span class="o">=</span> <span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="n">y0</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">rotation</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">x0</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">rotation</span><span class="p">)</span>
-        <span class="n">shape</span> <span class="o">=</span> <span class="p">(</span><span class="n">xa</span> <span class="o">&gt;</span> <span class="p">(</span><span class="o">-</span><span class="n">a</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">xa</span> <span class="o">&lt;</span> <span class="p">(</span><span class="n">a</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">ya</span> <span class="o">&gt;</span> <span class="p">(</span><span class="o">-</span><span class="n">b</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">ya</span> <span class="o">&lt;</span> <span class="p">(</span><span class="n">b</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>        
-    <span class="k">elif</span> <span class="n">slabel</span> <span class="o">==</span> <span class="s1">&#39;t&#39;</span><span class="p">:</span>
-        <span class="n">angle</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">3</span>
-        <span class="n">shape</span> <span class="o">=</span>  <span class="p">((</span><span class="o">-</span><span class="n">y</span><span class="o">-</span><span class="n">y0</span> <span class="o">+</span> <span class="n">a</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">angle</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">x0</span><span class="p">)</span> <span class="o">&gt;</span> <span class="p">(</span><span class="mi">0</span><span class="p">))</span> 
-                <span class="o">&amp;</span>  <span class="p">(</span><span class="o">-</span><span class="n">y</span><span class="o">-</span><span class="n">y0</span> <span class="o">+</span> <span class="n">a</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">angle</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">x0</span><span class="p">)</span> <span class="o">&gt;</span> <span class="p">(</span><span class="mi">0</span><span class="p">))</span> 
-                <span class="o">&amp;</span> <span class="p">(</span><span class="o">-</span><span class="n">y</span><span class="o">-</span><span class="n">y0</span> <span class="o">+</span> <span class="n">a</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">angle</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span> <span class="o">&lt;</span> <span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">angle</span><span class="o">/</span><span class="mi">2</span><span class="p">))))</span>        
-    <span class="k">elif</span> <span class="n">slabel</span> <span class="o">==</span> <span class="s1">&#39;c&#39;</span><span class="p">:</span>
-        <span class="n">shape</span> <span class="o">=</span> <span class="p">((</span><span class="n">x</span><span class="o">-</span><span class="n">x0</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="n">y0</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">&lt;</span> <span class="p">(</span><span class="n">a</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">Shapes</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">x0</span><span class="p">,</span><span class="n">y0</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">rotation</span><span class="p">):</span>    
+    <span class="n">b</span> <span class="o">=</span> <span class="mi">20</span> <span class="o">*</span> <span class="n">a</span>
+    <span class="n">theta</span> <span class="o">=</span> <span class="n">rotation</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">180</span>
+    <span class="n">xa</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">x0</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="n">y0</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
+    <span class="n">ya</span> <span class="o">=</span> <span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="n">y0</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">x0</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
+    <span class="n">shape</span> <span class="o">=</span> <span class="p">(</span><span class="n">xa</span> <span class="o">&gt;</span> <span class="p">(</span><span class="o">-</span><span class="n">a</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">xa</span> <span class="o">&lt;</span> <span class="p">(</span><span class="n">a</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">ya</span> <span class="o">&gt;</span> <span class="p">(</span><span class="o">-</span><span class="n">b</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">ya</span> <span class="o">&lt;</span> <span class="p">(</span><span class="n">b</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>        
     <span class="k">return</span> <span class="n">shape</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>This function defines the input aperture function. The inputs are the shape we want, the number of repeats of that shape in the horizontal and vertical directions, nx and ny,
-the size of the shape, a, and the spacing between them, d.</p>
+<p>This function defines the input aperture function. In this case two slits with angles given by rotations, width a and the spacing between d.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">Input_Image</span><span class="p">(</span><span class="n">slabel</span><span class="p">,</span><span class="n">nx</span><span class="p">,</span><span class="n">ny</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">d</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">Input_Image</span><span class="p">(</span><span class="n">rotations</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">d</span><span class="p">):</span>
     <span class="n">screen</span> <span class="o">=</span> <span class="mi">100</span>
     <span class="n">xmin</span> <span class="o">=</span> <span class="o">-</span><span class="n">screen</span><span class="o">/</span><span class="mi">2</span> 
     <span class="n">xmax</span> <span class="o">=</span> <span class="n">screen</span><span class="o">/</span><span class="mi">2</span>
     <span class="n">ymin</span> <span class="o">=</span> <span class="o">-</span><span class="n">screen</span><span class="o">/</span><span class="mi">2</span> 
     <span class="n">ymax</span> <span class="o">=</span> <span class="n">screen</span><span class="o">/</span><span class="mi">2</span>
-    <span class="n">dx</span> <span class="o">=</span> <span class="mf">0.1</span>
-    <span class="n">dy</span> <span class="o">=</span> <span class="mf">0.1</span>
+    <span class="n">dx</span> <span class="o">=</span> <span class="mf">0.05</span>
+    <span class="n">dy</span> <span class="o">=</span> <span class="mf">0.05</span>
     <span class="n">X</span><span class="p">,</span> <span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mgrid</span><span class="p">[</span><span class="n">xmin</span><span class="p">:</span><span class="n">xmax</span><span class="p">:</span><span class="n">dx</span><span class="p">,</span><span class="n">ymin</span><span class="p">:</span><span class="n">ymax</span><span class="p">:</span><span class="n">dy</span><span class="p">]</span>
     <span class="n">x_pts</span><span class="p">,</span> <span class="n">y_pts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
 
     <span class="n">InputImage</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">x_pts</span><span class="p">,</span><span class="n">y_pts</span><span class="p">))</span>
-    <span class="k">for</span> <span class="n">xhole</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">nx</span><span class="p">):</span>
-        <span class="k">for</span> <span class="n">yhole</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">ny</span><span class="p">):</span>
-            <span class="n">x_pos</span> <span class="o">=</span> <span class="p">(</span><span class="n">nx</span><span class="o">-</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">xhole</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span><span class="o">*</span><span class="n">d</span>
-            <span class="n">y_pos</span> <span class="o">=</span> <span class="p">(</span><span class="n">ny</span><span class="o">-</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">yhole</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span><span class="o">*</span><span class="n">d</span>
-            <span class="n">InputImage</span> <span class="o">+=</span> <span class="n">Shapes</span><span class="p">(</span><span class="n">slabel</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">,</span><span class="n">x_pos</span><span class="p">,</span><span class="n">y_pos</span><span class="p">,</span><span class="n">a</span><span class="p">)</span>        
-    <span class="k">return</span> <span class="n">InputImage</span>  
+    <span class="k">for</span> <span class="n">slit</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">):</span>
+        <span class="n">x_pos</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">slit</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">d</span><span class="o">/</span><span class="mi">2</span>
+        <span class="n">y_pos</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">InputImage</span> <span class="o">+=</span> <span class="n">Shapes</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">,</span><span class="n">x_pos</span><span class="p">,</span><span class="n">y_pos</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">rotations</span><span class="p">[</span><span class="n">slit</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">InputImage</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>  
 </pre></div>
 </div>
 </div>
 </div>
-<p>This cell is only used for visualisation. It allows us to zoom in on the image (input data) and specifies what colour we want
-(here yellow as we add the image into red and green channels). We can set the brightness in each RGB channel using the parameter gain.</p>
+<p>This cell is only used for visualisation. It allows us to zoom in on the image (input data) and specifies what colour we want. We can set the brightness in each RGB channel using the parameter gain.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">RGB_zoom_data</span><span class="p">(</span><span class="n">data</span><span class="p">,</span><span class="n">gain</span><span class="p">,</span><span class="n">zoom</span><span class="p">):</span>
@@ -559,8 +542,9 @@ the size of the shape, a, and the spacing between them, d.</p>
     <span class="n">R</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">x_pts</span><span class="p">,</span><span class="n">y_pts</span><span class="p">))</span>
     <span class="n">G</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">x_pts</span><span class="p">,</span><span class="n">y_pts</span><span class="p">))</span>
     <span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">x_pts</span><span class="p">,</span><span class="n">y_pts</span><span class="p">))</span>
-    <span class="n">R</span> <span class="o">+=</span> <span class="n">data</span>
-    <span class="n">G</span> <span class="o">+=</span> <span class="n">data</span>
+    <span class="n">R</span> <span class="o">+=</span> <span class="mf">0.99</span><span class="o">*</span><span class="n">data</span>
+    <span class="n">G</span> <span class="o">+=</span> <span class="mf">0.0</span><span class="o">*</span><span class="n">data</span>
+    <span class="n">B</span> <span class="o">+=</span> <span class="mf">0.99</span><span class="o">*</span><span class="n">data</span>
     <span class="n">R</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">gain</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">R</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">)</span>
     <span class="n">G</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">gain</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">G</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">)</span>
     <span class="n">B</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">gain</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">*</span><span class="n">B</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">)</span>
@@ -583,14 +567,14 @@ It calls RGZ_zoom_data, so if you want to change the magnification of the Fourie
     <span class="n">F2</span> <span class="o">/=</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">F2</span><span class="p">)</span>
     <span class="n">Gamma</span> <span class="o">=</span> <span class="mf">0.4</span>
     <span class="n">GAF2</span> <span class="o">=</span> <span class="n">F2</span><span class="o">**</span><span class="n">Gamma</span>
-    <span class="n">zoom</span> <span class="o">=</span> <span class="mi">2</span>
-    <span class="n">FourierImage</span> <span class="o">=</span> <span class="n">RGB_zoom_data</span><span class="p">(</span><span class="n">GAF2</span><span class="p">,[</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">],</span><span class="n">zoom</span><span class="p">)</span>
+    <span class="n">zoom</span> <span class="o">=</span> <span class="mi">4</span>
+    <span class="n">FourierImage</span> <span class="o">=</span> <span class="n">RGB_zoom_data</span><span class="p">(</span><span class="n">GAF2</span><span class="p">,[</span><span class="mf">1.5</span><span class="p">,</span><span class="mf">1.5</span><span class="p">,</span><span class="mf">1.5</span><span class="p">],</span><span class="n">zoom</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">FourierImage</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>This cell simply add arrows and labels to the plots.</p>
+<p>This cell simply adds arrows and labels to the plots.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plotting_function</span><span class="p">(</span><span class="n">ax_ref1</span><span class="p">,</span><span class="n">ax_ref2</span><span class="p">,</span><span class="n">plot_label</span><span class="p">,</span><span class="n">x_axis_label</span><span class="p">,</span><span class="n">y_axis_label</span><span class="p">):</span>
@@ -610,29 +594,31 @@ It calls RGZ_zoom_data, so if you want to change the magnification of the Fourie
 </div>
 </div>
 </div>
-<p>This cell makes a random selection of shapes, array sizes, shape sizes and spacings. If you want to create more permutations, then add
-extra values to Nx, Ny, a and d. You have to be a bit careful with a and d to avoid shapes that overlap or are off the edge of the
-input screen. Each time you run this cell it will make a new selection. The random.choice of the fig_num allows us to re-order
-the Fourier images to provide a matching test for students and instructors.</p>
+<p>This cell makes a selection of rotations.  The random.choice of the fig_num allows us to re-order
+the Fourier images to provide a matching test for students and instructors. Each time you run this cell it will make a new selection.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">shape_labels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;c&#39;</span><span class="p">,</span><span class="s1">&#39;t&#39;</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">,</span><span class="s1">&#39;s&#39;</span><span class="p">,</span><span class="s1">&#39;d&#39;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">num</span> <span class="o">=</span> <span class="mi">12</span>
 
-<span class="n">Nx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>
-<span class="n">Ny</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
-<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.4</span><span class="p">,</span><span class="mf">1.8</span><span class="p">])</span>
-<span class="n">d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">2.0</span><span class="p">,</span><span class="mf">3.0</span><span class="p">])</span>
+<span class="n">rotations</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span><span class="mi">12</span><span class="p">))</span>
 
-<span class="n">num</span> <span class="o">=</span> <span class="mi">12</span>
+<span class="n">rotations</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="n">rotations</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+<span class="n">rotations</span><span class="p">[:,</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="n">rotations</span><span class="p">[:,</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="n">rotations</span><span class="p">[:,</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+<span class="n">rotations</span><span class="p">[:,</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">30</span><span class="p">,</span> <span class="mi">30</span><span class="p">]</span>
+<span class="n">rotations</span><span class="p">[:,</span><span class="mi">6</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">45</span><span class="p">,</span> <span class="mi">45</span><span class="p">]</span>
+<span class="n">rotations</span><span class="p">[:,</span><span class="mi">7</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">60</span><span class="p">,</span> <span class="mi">60</span><span class="p">]</span>
+<span class="n">rotations</span><span class="p">[:,</span><span class="mi">8</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">75</span><span class="p">,</span> <span class="mi">75</span><span class="p">]</span>
+<span class="n">rotations</span><span class="p">[:,</span><span class="mi">9</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">75</span><span class="p">,</span> <span class="mi">90</span><span class="p">]</span>
+<span class="n">rotations</span><span class="p">[:,</span><span class="mi">10</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">90</span><span class="p">]</span>
+<span class="n">rotations</span><span class="p">[:,</span><span class="mi">11</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">90</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+                   
 
 <span class="n">fig_num</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">num</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
 
 <span class="n">selected_fig_order</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">fig_num</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="n">num</span><span class="p">,</span> <span class="n">replace</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
-<span class="n">selected_shape</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">shape_labels</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="n">num</span><span class="p">,</span> <span class="n">replace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
-<span class="n">selected_Nx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">Nx</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="n">num</span><span class="p">,</span> <span class="n">replace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
-<span class="n">selected_Ny</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">Ny</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="n">num</span><span class="p">,</span> <span class="n">replace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
-<span class="n">selected_a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="n">num</span><span class="p">,</span> <span class="n">replace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
-<span class="n">selected_d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="n">num</span><span class="p">,</span> <span class="n">replace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
 
 <span class="n">titles</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span><span class="s1">&#39;B&#39;</span><span class="p">,</span><span class="s1">&#39;C&#39;</span><span class="p">,</span><span class="s1">&#39;D&#39;</span><span class="p">,</span><span class="s1">&#39;E&#39;</span><span class="p">,</span><span class="s1">&#39;F&#39;</span><span class="p">,</span><span class="s1">&#39;G&#39;</span><span class="p">,</span><span class="s1">&#39;H&#39;</span><span class="p">,</span><span class="s1">&#39;I&#39;</span><span class="p">,</span><span class="s1">&#39;J&#39;</span><span class="p">,</span><span class="s1">&#39;K&#39;</span><span class="p">,</span><span class="s1">&#39;L&#39;</span><span class="p">]</span>
 <span class="n">ftitles</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;1&#39;</span><span class="p">,</span><span class="s1">&#39;2&#39;</span><span class="p">,</span><span class="s1">&#39;3&#39;</span><span class="p">,</span><span class="s1">&#39;4&#39;</span><span class="p">,</span><span class="s1">&#39;5&#39;</span><span class="p">,</span><span class="s1">&#39;6&#39;</span><span class="p">,</span><span class="s1">&#39;7&#39;</span><span class="p">,</span><span class="s1">&#39;8&#39;</span><span class="p">,</span><span class="s1">&#39;9&#39;</span><span class="p">,</span><span class="s1">&#39;10&#39;</span><span class="p">,</span><span class="s1">&#39;11&#39;</span><span class="p">,</span><span class="s1">&#39;12&#39;</span><span class="p">]</span>
@@ -647,8 +633,11 @@ the Fourier images to provide a matching test for students and instructors.</p>
 <span class="n">rows</span> <span class="o">=</span> <span class="mi">4</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">rows</span><span class="p">,</span><span class="n">cols</span><span class="p">,</span> <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">cols</span><span class="p">,</span><span class="mi">4</span><span class="o">*</span><span class="n">rows</span><span class="p">),</span><span class="n">dpi</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
 
+
+<span class="n">a</span> <span class="o">=</span> <span class="mf">0.5</span>
+<span class="n">d</span> <span class="o">=</span> <span class="mi">2</span>
 <span class="k">for</span> <span class="n">example</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">num</span><span class="p">):</span>
-    <span class="n">InputImage</span> <span class="o">=</span> <span class="n">Input_Image</span><span class="p">(</span><span class="n">selected_shape</span><span class="p">[</span><span class="n">example</span><span class="p">],</span><span class="n">selected_Nx</span><span class="p">[</span><span class="n">example</span><span class="p">],</span><span class="n">selected_Ny</span><span class="p">[</span><span class="n">example</span><span class="p">],</span><span class="n">selected_a</span><span class="p">[</span><span class="n">example</span><span class="p">],</span><span class="n">selected_d</span><span class="p">[</span><span class="n">example</span><span class="p">])</span>
+    <span class="n">InputImage</span> <span class="o">=</span> <span class="n">Input_Image</span><span class="p">(</span><span class="n">rotations</span><span class="p">[:,</span><span class="n">example</span><span class="p">],</span><span class="n">a</span><span class="p">,</span><span class="n">d</span><span class="p">)</span>
     <span class="n">ImageData</span> <span class="o">=</span> <span class="n">RGB_zoom_data</span><span class="p">(</span><span class="n">InputImage</span><span class="p">,[</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">],</span><span class="mf">4.0</span><span class="p">)</span>
     <span class="n">ax1_ref</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">fig_num</span><span class="p">[</span><span class="n">example</span><span class="p">]</span><span class="o">/</span><span class="mi">6</span><span class="p">)</span>
     <span class="n">ax2_ref</span> <span class="o">=</span> <span class="n">fig_num</span><span class="p">[</span><span class="n">example</span><span class="p">]</span> <span class="o">-</span> <span class="nb">int</span><span class="p">(</span><span class="n">fig_num</span><span class="p">[</span><span class="n">example</span><span class="p">]</span><span class="o">/</span><span class="mi">6</span><span class="p">)</span> <span class="o">*</span><span class="mi">6</span>
@@ -669,12 +658,12 @@ the Fourier images to provide a matching test for students and instructors.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/ArrayRandom12_15_0.png" src="_images/ArrayRandom12_15_0.png" />
+<img alt="_images/DSlitExercise_15_0.png" src="_images/DSlitExercise_15_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;RandomArrays12_1.png&#39;</span><span class="p">,</span><span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;DSlitExercise.png&#39;</span><span class="p">,</span><span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -690,22 +679,23 @@ arrangement.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A 5
-B 1
-C 6
-D 7
-E 12
-F 2
-G 3
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A 3
+B 11
+C 5
+D 2
+E 9
+F 8
+G 1
 H 10
-I 11
-J 4
-K 8
-L 9
+I 4
+J 7
+K 6
+L 12
 </pre></div>
 </div>
 </div>
 </div>
+<p>At this level of detail, B and C, and K and L are indistinguishable.</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -735,12 +725,19 @@ L 9
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="DSlitExercise.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="Letters.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">6.2. </span>2D FT of two slits: Exercise</p>
+            <p class="prev-next-title"><span class="section-number">6.1. </span>2D FT of letters</p>
         </div>
+    </a>
+    <a class='right-next' id="next-link" href="ArrayRandom12.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">6.3. </span>2D FT of arrays: Exercise</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
     </a>
 </div>
             </footer>
