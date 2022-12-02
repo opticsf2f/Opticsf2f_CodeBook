@@ -13,6 +13,7 @@ chapters:
   sections: 
   - file: LensRefraction
   - file: PrismRefraction
+  - file: Disp
 - file: Chapter3
   sections: 
   - file: PlaneWavesN
@@ -30,5 +31,6 @@ chapters:
 - file: Chapter6
   sections: 
   - file: Letters
+  - file: DSlitExercise
   - file: ArrayRandom12
 
