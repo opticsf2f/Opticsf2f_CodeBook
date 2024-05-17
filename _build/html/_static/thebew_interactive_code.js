@@ -6,7 +6,11 @@ function initInteractiveCode(){
             ){
             if (allCode[i].parentElement.parentElement.parentElement.classList.contains("cell_input")){
                 allCode[i].dataset.executable = "true";
-                allCode[i].dataset.language = "python"
+                allCode[i].dataset.language = "python";
+                var parent = allCode[i].parentElement.parentElement.parentElement;
+                parent.style.borderWidth="0px 0px 0px 3px";
+                parent.style.borderColor="#fe7b3a";
+                parent.style.borderRadius="0px";
             }
             else if (allCode[i].parentElement.parentElement.parentElement.classList.contains("cell_output")){
                 allCode[i].style.display="None"; 
@@ -39,7 +43,8 @@ function initInteractiveCode(){
     )
     adjustCSSRules(".CodeMirror", "height: auto");
     adjustCSSRules(".CodeMirror", "background: #282c34");
-    adjustCSSRules(".CodeMirror", "font-family: 'Jet Brains Mono Nerd', Arial;");
+    adjustCSSRules(".CodeMirror", "font-family: 'Jet Brains Mono Nerd', monospace;");
+    adjustCSSRules(".CodeMirror-wrap", "border-radius: '5px'");
 }
 
 function adjustCSSRules(selector, props, sheets){
