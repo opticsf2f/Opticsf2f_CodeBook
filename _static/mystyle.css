@@ -1,0 +1,49 @@
+div.interactive-start
+{
+    border: 3px solid rgb(254, 123, 58);
+    border-radius: 10px;
+    padding: 5px;
+    font-weight: 600;
+    margin:10px;
+    text-align: center;
+}
+div.interactive-start:hover
+{
+    background-color: rgb(254, 140, 83);
+    cursor: pointer;
+}
+div.thebe-busy{
+    margin-left:10px;
+    vertical-align: middle;
+}
+div.thebe-busy-spinner {
+    border: 3px solid #f3f3f3; /* Light grey */
+    border-top: 5px solid rgb(254, 123, 58); /* Blue */
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 1s linear infinite;
+    
+  }
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @-webkit-keyframes spin {
+    0% {
+      -webkit-transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+    }
+  }
+  
+pre{
+  font-family: 'Jet Brains Mono Nerd', monospace; 
+}
