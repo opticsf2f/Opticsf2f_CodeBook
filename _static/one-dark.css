@@ -6,7 +6,7 @@
 
 @font-face {
   font-family: "Jet Brains Mono Nerd";
-  src: url('/fonts/JetBrainsMonoNerdFont-Medium.ttf') format('truetype');
+  src: url('./JetBrainsMonoNerdFont-Medium.ttf') format('truetype');
 }
 
 /* basic */
